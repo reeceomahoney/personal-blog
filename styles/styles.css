@@ -11,15 +11,16 @@
     font-size: 24px;
 }
 
-/* Content */
+/* Home */
 
 .content, .footer {
     font-family: 'Merriweather', serif;
 }
 
 .cover-image {
-    width: 200px;
+    width: 100%;
     height: auto;
+    margin-bottom: 15px;
 }
 
 .post-title {
@@ -35,4 +36,15 @@
     width: 40%;
     margin: auto;
     margin-bottom: 15px;
+}
+
+/* Posts */
+
+.blog-image {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

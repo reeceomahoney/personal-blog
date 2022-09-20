@@ -65,6 +65,18 @@
     margin-bottom: 30px;
 }
 
+.half-quote {
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.subheading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Image sizing */
 @media (min-width: 768px) {
     .md-80 {
         width: 80%;

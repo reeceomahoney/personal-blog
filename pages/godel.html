@@ -15,7 +15,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
       <div class="container">
-        <a class="navbar-brand" href="../index.html">Reece O'Mahoney</a>
+        <a class="navbar-brand" href="../">Reece O'Mahoney</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample04">
           <ul class="navbar-nav ms-auto mb-2 mb-md-0 navbar-right">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+              <a class="nav-link" aria-current="page" href="../">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
@@ -157,14 +157,67 @@
           <p class="half-quote">Mapping each typographical symbol to a unique number, and thus each typographical operation to a corresponding arithmetical operation.</p>
 
 
-          Just from this definition alone, it is by no means obvious how we arrive at Gödel's string, so to understand this jump there are two other key concepts which we must discuss first: isomorphisms and metalanguages. An isomorphism is a fairly simple but also fairly broad term that can be understood most simply as an information-preserving transformation. This idea of preserving information is the crucial distinction between isomorphisms and other kinds of transformations. We should know if this criterion has been met by the fact that we will be able to translate back and forth between the two 'spaces' of the isomorphism without limit. To introduce this idea, we will start with a simple isomorphism and get progressively more complex. 
-
+          Just from this definition alone, it is by no means obvious how we arrive at Gödel's string, so to understand this jump there are two other key concepts which we must discuss first: isomorphisms and metalanguages. An isomorphism is a fairly simple but also fairly broad term that can be understood most simply as an information-preserving transformation. This idea of preserving information is the crucial distinction between isomorphisms and other kinds of transformations. We should know if this criterion has been met by the fact that we will be able to translate back and forth between the two 'spaces' of the isomorphism without limit. To introduce this idea, we will start with a simple isomorphism and get progressively more complex.<br><br>
 
           To begin with, imagine staring into the mirror and noting what the reflection of each object in the room looks like. Apart from things being flipped left to right, they are almost entirely identical. We could say that there exists a rather trivial mapping (we can use this term interchangeably with transformation) between objects in the real world and their image in the mirror world. This mapping  constitutes the basis of a simple isomorphism. In this instance we know information is preserved perfectly because, given a full inspection of some object in the mirror world, it would be fairly straightforward to construct its counterpart in the real world and vice versa. A slightly more complex isomorphism, with a much closer resemblance to Gödel numbering, is the mapping discovered by Descartes between lines on a coordinate grid and polynomial equations. This is an idea encountered so frequently during one's secondary maths education that one starts to become blind to its true nature, but it is indeed just another mapping between two spaces. In this case, the information preserving test is the fact that we can find an equation from a line's intersections with the x-axis and equivalently draw a line from the roots of its corresponding polynomial. Now that we've developed our intuition as to what constitutes an isomorphism, it is time we move onto our next key idea, metalanguages.
         </p>
 
         <img src="../assets/images/day-and-night.jpg"class="blog-image md-40">
           <figcaption class="figure-caption">Day and night, MC Escher</figcaption>
+
+        <p>
+          As we discussed earlier, mathematicians are interested in studying the systems used to talk about objects as well as the objects themselves. To talk about objects (numbers), you require a language (TNT), but in order to talk about the system itself, you require what's called a metalanguage. This is a concept that seems very foreign to us at first as natural languages, like English, contain their own metalanguage. That is to say, if I wanted to talk about a word itself as opposed to the object it describes, I don't have to switch to 'meta-English', but I can just simply write something like 'The word “house” has five letters'. Note I am not talking about the properties of houses, but of the word “house” itself. It is a direct result of this fact that natural languages contain their metalanguages that allows inconsistencies like the Epimenides paradox to arise. Conversely, we wouldn't view formal systems as having this property, as if I wanted to discuss the fact that 'String X is not a theorem of TNT', I have to make this proposition in the meta-language, English, as opposed to the language, TNT.<br><br>
+
+          At this point, the implications of Gödel numbering a system should be starting to materialise in your mind. While it isn't self-evident that the complex and varied array of typographical operations we have at our disposal should all be expressible in equivalent arithmetical operations, this is indeed the case. To demonstrate this fact, it would be much clearer to first look at a simpler system that we'll call the 'MIU system'. The MIU system has three symbols, M, I and U, and also one axiom, MI. The typographical rules of the system are as following:
+
+          <ol>
+            <li>If xI is a theorem, so is xIU</li>
+            <li>If Mx is a theorem, so is Mxx</li>
+            <li>In any theorem III can be replaced by U</li>
+            <li>UU can be dropped from any theorem</li>
+          </ol>
+
+          Here, the symbol 'x' is just a placeholder for any other string, not another symbol. As an interesting exercise, see if you can derive the string MU give the axiom stated above. Given this set of rules, let us attempt to establish a simple Gödel numbering for the system. The symbols are easy to deal with and we can pick the following three numbers arbitrarily:
+
+          <p class="half-quote">M ⇔ 3</p>
+          <p class="half-quote">I ⇔ 1</p>
+          <p class="half-quote">U ⇔ 0</p>
+
+          Under this numbering, we can translate any given string like so:
+
+          <p class="half-quote">MI ⇔ 31</p>
+
+          <p class="half-quote">MIIUI ⇔ 31101</p>
+
+
+          Now, what would be the arithmetical operation corresponding to our typographical rules? If you feel up to the task pause for a second here and try to work it out yourself. The answers for the first two are given below.
+
+          <p class="half-quote">If we have 10m + 1, then we can make 10 x (10m + 1)</p>
+
+          <p class="half-quote">If we have 3 x 10<sup>m</sup> + n, then we can make 10<sup>m</sup> x (3 x 10<sup>m</sup> + n) + n</p>
+
+
+          Here m and n just represent any natural number. From these examples, it might be a bit easier to see how we can extrapolate this idea out and using a combination of multiplication, addition, subtraction, and division, express any typographical rule as an associated arithmetical one operating on those symbols' Gödel numbers.<br><br>
+
+          The crucial insight from this discussion is as follows. Given a sufficient amount of expressive power, it is always possible to Gödel number a system, creating a mapping between the operations in that system to a set of corresponding arithmetical operations. As a result, any meta-statement that we wish to make about our system's properties, which is equivalent to making a statement about some sequence of its operations, can be mapped into some equivalent statement about some rather lengthy and contrived arithmetical process. The latter is the exact kind of thing that TNT is purpose-built to discuss, and so, by expressing certain statements about arithmetical operations in TNT, we are also inadvertently expressing isomorphic statements of Meta-TNT. In short, it is because we can always construct this mapping that TNT implicitly contains its metalanguage and is thus capable of self-reference. To sum, the isomorphism produced by Gödel numbering a system is outlined below.
+
+          <p class="half-quote">Typographical symbols ⇔ Numbers</p>
+
+          <p class="half-quote">Typographical operations ⇔ Arithmetical operations</p>
+
+          <p class="half-quote">Strings of TNT ⇔ An equivalent Gödel number</p>
+
+          <p class="half-quote">Statements about certain numbers ⇔ Statements about TNT</p>
+
+          Now that we know we can create strings of TNT capable of talking about other strings of TNT, we know self-reference is possible, and thus the only thing left to wrap up is an explanation of the specific way in which we construct Gödel's string. The details of this however are much too complex for me to be able to explain succinctly and are also largely superfluous to our overarching point, but on an extremely high level, the process involves a combination of the following two ideas:<br><br>
+          
+          <ol>
+            <li>Creating a string that states whether some other string is a correct derivation of some given proposition.</li>
+            <li>Creating the string generated from substituting the Gödel number of some other string in place of that same string's own free variables.</li>
+          </ol>
+
+          These two ideas combined with a few qualifiers form the pieces from which Gödel's string is constructed. If you're interested in a more in-depth explanation of how this feat this achieved, I would highly recommend picking up a copy of Hofstadter's Gödel, Escher, Bach yourself. All in all, we can now say that we have proved or at least outlined how to prove the fact that TNT is incomplete, and since this result applies to any system which expands on TNT, by extension we can say that it is impossible to create any complete formal system of number theory. In effect, this result is equivalent to stating the fact that there exists no 'mechanical' decision procedure for number-theoretical truth &#8212; an intelligent agent is needed to make mathematical progress.  There are just two more discussion points I want to mention before closing off Part I. Firstly, we've used this process to prove incompleteness, but what is the effect this had on consistency? Secondly, now that we know the secret of Gödel's trick, can't we find a way to circumvent it? Both of these points will be expanded on below.
+        </p>
 
         <img src="../assets/images/escher-relativity.jpeg"class="blog-image md-40">
           <figcaption class="figure-caption">Relvativity, MC Escher</figcaption>
